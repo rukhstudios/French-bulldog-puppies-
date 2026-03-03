@@ -30,6 +30,7 @@
     }
     a{color:inherit}
     .container{max-width:1080px;margin:0 auto;padding:24px}
+
     header{
       position:sticky; top:0;
       backdrop-filter: blur(10px);
@@ -56,11 +57,13 @@
       margin-left:14px;
     }
     .nav a:hover{color:var(--text)}
+
     .hero{
       display:grid; grid-template-columns: 1.15fr .85fr; gap:22px;
       padding:26px 0 10px;
     }
     @media (max-width: 860px){ .hero{grid-template-columns:1fr} }
+
     .pill{
       display:inline-flex; gap:8px; align-items:center;
       padding:8px 12px; border-radius:999px;
@@ -70,7 +73,9 @@
     }
     h1{font-size:44px; line-height:1.05; margin:14px 0 10px}
     @media (max-width: 520px){ h1{font-size:36px} }
+
     .sub{color:var(--muted); font-size:16px; margin:0 0 18px}
+
     .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -79,6 +84,7 @@
       border:1px solid var(--line);
       background: rgba(255,255,255,.06);
       text-decoration:none; font-weight:800;
+      transition: transform .12s ease;
     }
     .btn.primary{
       border:none;
@@ -86,6 +92,7 @@
       color:#07101c;
     }
     .btn:hover{transform: translateY(-1px)}
+
     .card{
       background: rgba(18,26,43,.75);
       border:1px solid var(--line);
@@ -93,16 +100,20 @@
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-    .heroCard{padding:16px}
-    .heroCard img{width:100%; height:320px; object-fit:cover; border-radius:14px}
+
+    /* HERO CARD (VIDEO) */
+    .heroCard{ padding:0; }
     .heroCard video{
-  width:100%;
-  height:320px;
-  object-fit:cover;      /* use contain if you don’t want any cropping */
-  border-radius:14px;
-  border:1px solid var(--line);
-  background: rgba(0,0,0,.25);
-}
+      display:block;
+      width:100%;
+      height:320px;
+      object-fit:cover; /* use contain if you want zero cropping */
+      border-radius: var(--radius) var(--radius) 0 0;
+      border:none;
+      background: rgba(0,0,0,.25);
+    }
+    .heroCard .heroContent{ padding:16px; }
+
     .kpiRow{display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:12px}
     @media (max-width: 520px){ .kpiRow{grid-template-columns:1fr} }
     .kpi{
@@ -111,11 +122,13 @@
     }
     .kpi strong{display:block; font-size:18px}
     .kpi span{color:var(--muted); font-size:12px}
+
     section{padding:18px 0}
     .sectionTitle{display:flex; align-items:end; justify-content:space-between; gap:10px}
     h2{margin:0; font-size:26px}
     .hint{color:var(--muted); font-size:13px; margin-top:4px}
 
+    /* PUPPY GRID */
     .grid{
       display:grid; grid-template-columns: repeat(3,1fr);
       gap:14px; margin-top:12px;
@@ -127,7 +140,12 @@
       padding:14px;
       display:flex; flex-direction:column; gap:10px;
     }
-    .puppy img{width:100%; height:220px; object-fit:cover; border-radius:14px}
+    .puppy img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      border-radius:14px;
+    }
     .tagRow{display:flex; flex-wrap:wrap; gap:8px}
     .tag{
       font-size:12px; font-weight:800;
@@ -138,12 +156,18 @@
     }
     .price{font-size:20px; font-weight:900}
     .muted{color:var(--muted)}
+
+    /* BOX + SPLIT */
     .split{
       display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:12px;
     }
     @media (max-width: 860px){ .split{grid-template-columns:1fr} }
+
+    /* adds spacing between stacked boxes/cards in Parents section */
     .box{padding:16px; margin-bottom:24px;}
+
     ul{margin:10px 0 0 18px; color:var(--muted)}
+
     .footer{
       padding:24px 0 40px;
       color:var(--muted);
@@ -153,7 +177,7 @@
     }
     .small{font-size:12px}
 
-    /* Videos */
+    /* VIDEOS SECTION */
     .videoGrid{
       display:grid;
       grid-template-columns: repeat(3,1fr);
@@ -169,7 +193,6 @@
       flex-direction:column;
       gap:10px;
     }
-
     .videoCard video{
       width:100%;
       height:220px;
@@ -214,7 +237,6 @@
           <a class="btn primary" href="mailto:soldham1969@gmail.com?subject=French%20Bulldog%20Puppy%20Inquiry&body=Hi!%20I%E2%80%99m%20interested%20in%20your%20French%20Bulldog%20puppies.%20Can%20you%20share%20availability%2C%20pricing%2C%20deposit%20details%2C%20and%20pickup%20info%3F%0A%0AWhich%20type%20I%E2%80%99m%20interested%20in%3A%20Blue%20Fawn%20/%20Blue%20%26%20Tan%20/%20Fluffy%0APreferred%20sex%3A%20Male%20/%20Female%0A">
             ✉️ Message for Details
           </a>
-
           <a class="btn" href="tel:+18137964572">📞 Call</a>
           <a class="btn" href="sms:+18137964572&body=Hi!%20I%E2%80%99m%20interested%20in%20your%20French%20Bulldog%20puppies.%20Can%20you%20share%20availability%2C%20pricing%2C%20and%20deposit%20details%3F">💬 Text</a>
         </div>
@@ -230,17 +252,19 @@
         </p>
       </div>
 
+      <!-- FEATURED VIDEO CARD -->
       <div class="card heroCard">
         <video controls preload="metadata" playsinline poster="assets/puppy1.jpg">
-  <source src="assets/videos/featured.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-        <div style="margin-top:10px">
+          <source src="assets/videos/featured.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="heroContent">
           <div style="font-weight:900;font-size:18px">Featured Puppy: [Add Name/Color]</div>
           <div class="muted">Blue Fawn / Blue &amp; Tan / Fluffy • Ready early April</div>
         </div>
       </div>
-    </div>
+    </div><!-- ✅ CLOSE HERO GRID (this was missing before) -->
 
     <!-- AVAILABLE PUPPIES -->
     <section id="available">
