@@ -1,4 +1,4 @@
-Need the code for the other three puppies ; <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -87,13 +87,12 @@ Need the code for the other three puppies ; <!doctype html>
     }
     .btn:hover{transform: translateY(-1px)}
     .card{
-  background: rgba(18,26,43,.75);
-  border:1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow:hidden;
-  margin-bottom: 24px;   /* 👈 add this line */
-}
+      background: rgba(18,26,43,.75);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
     .heroCard{padding:16px}
     .heroCard img{width:100%; height:320px; object-fit:cover; border-radius:14px}
     .kpiRow{display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin-top:12px}
@@ -135,7 +134,7 @@ Need the code for the other three puppies ; <!doctype html>
       display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:12px;
     }
     @media (max-width: 860px){ .split{grid-template-columns:1fr} }
-    .box{padding:16px}
+    .box{padding:16px; margin-bottom:24px;}
     ul{margin:10px 0 0 18px; color:var(--muted)}
     .footer{
       padding:24px 0 40px;
@@ -145,6 +144,32 @@ Need the code for the other three puppies ; <!doctype html>
       font-size:13px;
     }
     .small{font-size:12px}
+
+    /* Videos */
+    .videoGrid{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:14px;
+      margin-top:12px;
+    }
+    @media (max-width: 960px){ .videoGrid{grid-template-columns: repeat(2,1fr);} }
+    @media (max-width: 620px){ .videoGrid{grid-template-columns: 1fr;} }
+
+    .videoCard{
+      padding:14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .videoCard video{
+      width:100%;
+      height:220px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.25);
+      object-fit: cover;
+    }
   </style>
 </head>
 
@@ -157,6 +182,7 @@ Need the code for the other three puppies ; <!doctype html>
       </div>
       <nav>
         <a href="#available">Available</a>
+        <a href="#videos">Videos</a>
         <a href="#parents">Parents</a>
         <a href="#reserve">Reserve</a>
       </nav>
@@ -177,7 +203,6 @@ Need the code for the other three puppies ; <!doctype html>
         </p>
 
         <div class="ctaRow">
-          <!-- EDIT THESE: email + phone -->
           <a class="btn primary" href="mailto:soldham1969@gmail.com?subject=French%20Bulldog%20Puppy%20Inquiry&body=Hi!%20I%E2%80%99m%20interested%20in%20your%20French%20Bulldog%20puppies.%20Can%20you%20share%20availability%2C%20pricing%2C%20deposit%20details%2C%20and%20pickup%20info%3F%0A%0AWhich%20type%20I%E2%80%99m%20interested%20in%3A%20Blue%20Fawn%20/%20Blue%20%26%20Tan%20/%20Fluffy%0APreferred%20sex%3A%20Male%20/%20Female%0A">
             ✉️ Message for Details
           </a>
@@ -265,54 +290,54 @@ Need the code for the other three puppies ; <!doctype html>
           <a class="btn primary" href="#reserve">Reserve / inquire</a>
         </div>
 
-<!-- Blue & Tan - Male -->
-<div class="card puppy">
-  <img src="assets/puppy4.jpg" alt="Blue and tan male French bulldog puppy" />
-  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-    <div style="font-weight:900;font-size:18px">Blue &amp; Tan • Male</div>
-    <div class="price">$3,000</div>
-  </div>
-  <div class="tagRow">
-    <span class="tag">AKC parents</span>
-    <span class="tag">Ready: Early April</span>
-    <span class="tag">Deposit to hold</span>
-  </div>
-  <div class="muted">Message for details, temperament notes, and updated photos.</div>
-  <a class="btn primary" href="#reserve">Reserve / inquire</a>
-</div>
+        <!-- Blue & Tan - Male -->
+        <div class="card puppy">
+          <img src="assets/puppy4.jpg" alt="Blue and tan male French bulldog puppy" />
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+            <div style="font-weight:900;font-size:18px">Blue &amp; Tan • Male</div>
+            <div class="price">$3,000</div>
+          </div>
+          <div class="tagRow">
+            <span class="tag">AKC parents</span>
+            <span class="tag">Ready: Early April</span>
+            <span class="tag">Deposit to hold</span>
+          </div>
+          <div class="muted">Message for details, temperament notes, and updated photos.</div>
+          <a class="btn primary" href="#reserve">Reserve / inquire</a>
+        </div>
 
-<!-- Blue & Tan - Male -->
-<div class="card puppy">
-  <img src="assets/puppy5.jpg" alt="Blue and tan male French bulldog puppy" />
-  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-    <div style="font-weight:900;font-size:18px">Blue &amp; Tan • Male</div>
-    <div class="price">$3,000</div>
-  </div>
-  <div class="tagRow">
-    <span class="tag">AKC parents</span>
-    <span class="tag">Ready: Early April</span>
-    <span class="tag">Deposit to hold</span>
-  </div>
-  <div class="muted">Message for details, temperament notes, and updated photos.</div>
-  <a class="btn primary" href="#reserve">Reserve / inquire</a>
-</div>
+        <!-- Blue & Tan - Male -->
+        <div class="card puppy">
+          <img src="assets/puppy5.jpg" alt="Blue and tan male French bulldog puppy" />
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+            <div style="font-weight:900;font-size:18px">Blue &amp; Tan • Male</div>
+            <div class="price">$3,000</div>
+          </div>
+          <div class="tagRow">
+            <span class="tag">AKC parents</span>
+            <span class="tag">Ready: Early April</span>
+            <span class="tag">Deposit to hold</span>
+          </div>
+          <div class="muted">Message for details, temperament notes, and updated photos.</div>
+          <a class="btn primary" href="#reserve">Reserve / inquire</a>
+        </div>
 
-<!-- Blue & Tan - Female -->
-<div class="card puppy">
-  <img src="assets/puppy6.jpg" alt="Blue and tan female French bulldog puppy" />
-  <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-    <div style="font-weight:900;font-size:18px">Blue &amp; Tan • Female</div>
-    <div class="price">$3,000</div>
-  </div>
-  <div class="tagRow">
-    <span class="tag">AKC parents</span>
-    <span class="tag">Ready: Early April</span>
-    <span class="tag">Deposit to hold</span>
-  </div>
-  <div class="muted">Message for details, temperament notes, and updated photos.</div>
-  <a class="btn primary" href="#reserve">Reserve / inquire</a>
-</div>
-  </div>
+        <!-- Blue & Tan - Female -->
+        <div class="card puppy">
+          <img src="assets/puppy6.jpg" alt="Blue and tan female French bulldog puppy" />
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+            <div style="font-weight:900;font-size:18px">Blue &amp; Tan • Female</div>
+            <div class="price">$3,000</div>
+          </div>
+          <div class="tagRow">
+            <span class="tag">AKC parents</span>
+            <span class="tag">Ready: Early April</span>
+            <span class="tag">Deposit to hold</span>
+          </div>
+          <div class="muted">Message for details, temperament notes, and updated photos.</div>
+          <a class="btn primary" href="#reserve">Reserve / inquire</a>
+        </div>
+      </div>
 
       <div class="card box" style="margin-top:14px">
         <div style="font-weight:900;font-size:18px;margin-bottom:6px">Litter breakdown</div>
@@ -321,6 +346,42 @@ Need the code for the other three puppies ; <!doctype html>
           <b>4 Blue &amp; Tan:</b> 3 males, 1 female<br/>
           <b>Fluffy:</b> 1 male visible Fluffy (possibly 2)<br/>
           <b>Pricing:</b> $3,000 (standard) • $5,500 (visible Fluffy)
+        </div>
+      </div>
+    </section>
+
+    <!-- PUPPY VIDEOS -->
+    <section id="videos">
+      <div class="sectionTitle">
+        <div>
+          <h2>Puppy Videos</h2>
+          <div class="hint">Tap to play (local MP4)</div>
+        </div>
+      </div>
+
+      <div class="videoGrid">
+        <div class="card videoCard">
+          <video controls preload="metadata" playsinline>
+            <source src="assets/videos/puppy1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="muted">Video #1</div>
+        </div>
+
+        <div class="card videoCard">
+          <video controls preload="metadata" playsinline>
+            <source src="assets/videos/puppy2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="muted">Video #2</div>
+        </div>
+
+        <div class="card videoCard">
+          <video controls preload="metadata" playsinline>
+            <source src="assets/videos/puppy3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="muted">Video #3</div>
         </div>
       </div>
     </section>
@@ -348,10 +409,10 @@ Need the code for the other three puppies ; <!doctype html>
 
         <div class="card box">
           <div style="font-weight:900;font-size:18px;margin-bottom:6px">Parents photo</div>
-          <img src="assets/momdad.jpg" alt="Bowie Rebel and Lena Bird" 
-     style="width:100%; height:auto; object-fit:contain; border-radius:14px; border:1px solid var(--line)" />
+          <img src="assets/momdad.jpg" alt="Bowie Rebel and Lena Bird"
+               style="width:100%; height:auto; object-fit:contain; border-radius:14px; border:1px solid var(--line)" />
           <div class="muted" style="margin-top:10px">
-            Photo of </b>Bowie Rebel &amp; Lena Bird<b>.
+            Photo of Bowie Rebel &amp; Lena Bird.
           </div>
         </div>
       </div>
@@ -417,7 +478,6 @@ Need the code for the other three puppies ; <!doctype html>
           </div>
 
           <div class="ctaRow" style="margin:0">
-            <!-- EDIT THESE: email + phone -->
             <a class="btn primary" href="mailto:soldham1969@gmail.com?subject=Deposit%20and%20Availability%20-%20French%20Bulldog%20Puppy&body=Name%3A%0APhone%3A%0AInterested%20in%3A%20Blue%20Fawn%20/%20Blue%20%26%20Tan%20/%20Fluffy%0ASex%20preference%3A%20Male%20/%20Female%0AQuestions%3A%0A">
               ✉️ Message Now
             </a>
