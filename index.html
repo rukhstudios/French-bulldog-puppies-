@@ -22,9 +22,10 @@
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: radial-gradient(1200px 600px at 15% 0%, rgba(124,92,255,.25), transparent 55%),
-                  radial-gradient(900px 500px at 85% 10%, rgba(25,211,197,.18), transparent 55%),
-                  var(--bg);
+      background:
+        radial-gradient(1200px 600px at 15% 0%, rgba(124,92,255,.25), transparent 55%),
+        radial-gradient(900px 500px at 85% 10%, rgba(25,211,197,.18), transparent 55%),
+        var(--bg);
       color:var(--text);
       line-height:1.5;
     }
@@ -73,7 +74,6 @@
     }
     h1{font-size:44px; line-height:1.05; margin:14px 0 10px}
     @media (max-width: 520px){ h1{font-size:36px} }
-
     .sub{color:var(--muted); font-size:16px; margin:0 0 18px}
 
     .ctaRow{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px}
@@ -101,14 +101,14 @@
       overflow:hidden;
     }
 
-    /* HERO CARD (VIDEO) */
+    /* HERO FEATURED VIDEO CARD */
     .heroCard{ padding:0; }
     .heroCard video{
       display:block;
       width:100%;
       height:320px;
-      object-fit:cover; /* use contain if you want zero cropping */
-      border-radius: var(--radius) var(--radius) 0 0;
+      object-fit:cover; /* switch to contain if you want zero cropping */
+      border-radius: var(--radius) var(--radius) 0 0; /* fills card top corners */
       border:none;
       background: rgba(0,0,0,.25);
     }
@@ -127,6 +127,8 @@
     .sectionTitle{display:flex; align-items:end; justify-content:space-between; gap:10px}
     h2{margin:0; font-size:26px}
     .hint{color:var(--muted); font-size:13px; margin-top:4px}
+    .muted{color:var(--muted)}
+    .small{font-size:12px}
 
     /* PUPPY GRID */
     .grid{
@@ -145,6 +147,7 @@
       height:220px;
       object-fit:cover;
       border-radius:14px;
+      display:block;
     }
     .tagRow{display:flex; flex-wrap:wrap; gap:8px}
     .tag{
@@ -155,17 +158,15 @@
       color:var(--muted);
     }
     .price{font-size:20px; font-weight:900}
-    .muted{color:var(--muted)}
 
-    /* BOX + SPLIT */
+    /* SPLIT */
     .split{
       display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-top:12px;
     }
     @media (max-width: 860px){ .split{grid-template-columns:1fr} }
 
-    /* adds spacing between stacked boxes/cards in Parents section */
+    /* adds spacing between stacked boxes/cards */
     .box{padding:16px; margin-bottom:24px;}
-
     ul{margin:10px 0 0 18px; color:var(--muted)}
 
     .footer{
@@ -175,7 +176,6 @@
       margin-top:22px;
       font-size:13px;
     }
-    .small{font-size:12px}
 
     /* VIDEOS SECTION */
     .videoGrid{
@@ -200,6 +200,7 @@
       border:1px solid var(--line);
       background: rgba(0,0,0,.25);
       object-fit: cover;
+      display:block;
     }
   </style>
 </head>
@@ -254,8 +255,9 @@
 
       <!-- FEATURED VIDEO CARD -->
       <div class="card heroCard">
+        <!-- NOTE: repo screenshot shows featured.mp4 is in /assets (not /assets/videos) -->
         <video controls preload="metadata" playsinline poster="assets/puppy1.jpg">
-          <source src="assets/videos/featured.mp4" type="video/mp4" />
+          <source src="assets/featured.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -264,7 +266,7 @@
           <div class="muted">Blue Fawn / Blue &amp; Tan / Fluffy • Ready early April</div>
         </div>
       </div>
-    </div><!-- ✅ CLOSE HERO GRID (this was missing before) -->
+    </div>
 
     <!-- AVAILABLE PUPPIES -->
     <section id="available">
@@ -277,11 +279,10 @@
       </div>
 
       <div class="grid">
-        <!-- Blue Fawn - Male -->
         <div class="card puppy">
           <img src="assets/puppy1.jpg" alt="Blue Fawn male French bulldog puppy" />
           <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
-            <div style="font-weight:900;font-size:18px">Blue Fawn • Fluffy Male</div>
+            <div style="font-weight:900;font-size:18px">Blue Fawn • Male</div>
             <div class="price">$4,000</div>
           </div>
           <div class="tagRow">
@@ -293,7 +294,6 @@
           <a class="btn primary" href="#reserve">Reserve / inquire</a>
         </div>
 
-        <!-- Blue Fawn - Female -->
         <div class="card puppy">
           <img src="assets/puppy2.jpg" alt="Blue Fawn female French bulldog puppy" />
           <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
@@ -309,7 +309,6 @@
           <a class="btn primary" href="#reserve">Reserve / inquire</a>
         </div>
 
-        <!-- Blue & Tan - Fluffy Male -->
         <div class="card puppy">
           <img src="assets/puppy3.jpg" alt="Blue and tan fluffy French bulldog puppy" />
           <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
@@ -325,7 +324,6 @@
           <a class="btn primary" href="#reserve">Reserve / inquire</a>
         </div>
 
-        <!-- Blue & Tan - Male -->
         <div class="card puppy">
           <img src="assets/puppy4.jpg" alt="Blue and tan male French bulldog puppy" />
           <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
@@ -341,7 +339,6 @@
           <a class="btn primary" href="#reserve">Reserve / inquire</a>
         </div>
 
-        <!-- Blue & Tan - Male -->
         <div class="card puppy">
           <img src="assets/puppy5.jpg" alt="Blue and tan male French bulldog puppy" />
           <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
@@ -357,7 +354,6 @@
           <a class="btn primary" href="#reserve">Reserve / inquire</a>
         </div>
 
-        <!-- Blue & Tan - Female -->
         <div class="card puppy">
           <img src="assets/puppy6.jpg" alt="Blue and tan female French bulldog puppy" />
           <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
@@ -397,7 +393,7 @@
       <div class="videoGrid">
         <div class="card videoCard">
           <video controls preload="metadata" playsinline>
-            <source src="assets/videos/puppy1.mp4" type="video/mp4" />
+            <source src="assets/puppy1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div class="muted">Video #1</div>
@@ -405,7 +401,7 @@
 
         <div class="card videoCard">
           <video controls preload="metadata" playsinline>
-            <source src="assets/videos/puppy2.mp4" type="video/mp4" />
+            <source src="assets/puppy2.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div class="muted">Video #2</div>
@@ -413,7 +409,7 @@
 
         <div class="card videoCard">
           <video controls preload="metadata" playsinline>
-            <source src="assets/videos/puppy3.mp4" type="video/mp4" />
+            <source src="assets/puppy3.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div class="muted">Video #3</div>
@@ -445,7 +441,7 @@
         <div class="card box">
           <div style="font-weight:900;font-size:18px;margin-bottom:6px">Parents photo</div>
           <img src="assets/momdad.jpg" alt="Bowie Rebel and Lena Bird"
-               style="width:100%; height:auto; object-fit:contain; border-radius:14px; border:1px solid var(--line)" />
+               style="width:100%; height:auto; object-fit:contain; border-radius:14px; border:1px solid var(--line); display:block;" />
           <div class="muted" style="margin-top:10px">
             Photo of Bowie Rebel &amp; Lena Bird.
           </div>
